@@ -2,14 +2,14 @@
 
 echo "Making pre-invocation changes to the assemble script."
 
-echo "MY_VAR is set to: '${MY_VAR}'"
+echo "MY_VAR is set to: '${MY_VAR}'. MY_OTHER_VAR is set to: '${MY_OTHER_VAR}'."
 
 /usr/libexec/s2i/assemble
 rc=$?
 
 if [ $rc -eq 0 ]; then
     echo "Making post-invocation changes to the assemble script."
-    echo "MY_VAR is set to: '${MY_VAR}'"
+    echo "MY_VAR is set to: '${MY_VAR}'. MY_OTHER_VAR is set to: '${MY_OTHER_VAR}'."
 else
     echo "Error: assemble failed!"
 fi
