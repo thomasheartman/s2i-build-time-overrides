@@ -10,6 +10,20 @@ rc=$?
 if [ $rc -eq 0 ]; then
     echo "Making post-invocation changes to the assemble script."
     echo "MY_VAR is set to: '${MY_VAR}'. MY_OTHER_VAR is set to: '${MY_OTHER_VAR}'."
+
+
+    dir = /usr/my-new-dir/
+    mkdir $dir
+    cd $dir
+
+    touch a b c
+
+    target = /usr/my-other-dir/
+    mkdir $target
+    cp $dir/* $target/
+
+    ls -lahR $target
+
 else
     echo "Error: assemble failed!"
 fi
